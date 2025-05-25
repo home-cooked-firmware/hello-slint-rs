@@ -1,0 +1,26 @@
+export component MainWindow inherits Window {
+    callback clicked <=> i-touch-area.clicked;
+
+    in property <int> screen-width;
+    in property <int> screen-height;
+
+    width: screen-width * 1px;
+    height: screen-height * 1px;
+    title: "Hello Slint!";
+
+    i-touch-area := TouchArea {}
+
+    VerticalLayout {
+        spacing: 0px;
+        Rectangle {
+            background: aquamarine;
+            vertical-stretch: 1;
+
+            Text {
+                text: "Hello, Slint!";
+                font-size: 28pt;
+                color: black;
+            }
+        }
+    }
+}
